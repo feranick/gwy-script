@@ -4,7 +4,7 @@
 # GVSN-mac
 # 
 # Bash script to make and submit gwyddion nightly packages to Ubuntu ppa.
-# v. 20111205
+# v. 20111206
 #
 # Nicola Ferralis <feranick@hotmail.com>
 # 
@@ -13,9 +13,9 @@
 
 if [ "$1" = "-h" ]; then
 echo
-echo "If the argument \"--no-splash\" is passed at launch,"
-echo "Gwyddion will be compiled without the splash screen"
-echo
+echo "Available arguments at launch-time:"
+echo "\"--no-splash\": Gwyddion will be compiled without the splash screen"
+echo "\"--dmg\": A dmg package will be made"
 else
 
 
@@ -95,12 +95,12 @@ if [ "$TYPE" = "1" ]; then
  #------------------------------------------------------------
  # Remove splash screen
  #------------------------------------------------------------
- if [ "$1" = "--no-splash" ]; then
- echo
- echo "Disabling splash screen"
- echo
- nosplash $NEW
- fi
+ if [ "$1" = "--no-splash" ] || [ "$2" = "--no-splash" ] ; then
+  echo
+  echo "Disabling splash screen"
+  echo
+  nosplash $NEW
+fi
  
  #------------------------------------------------------------
  # Prepare Macports Portfile for new version
@@ -136,14 +136,19 @@ if [ "$TYPE" = "1" ]; then
 
  cd $DIRGW/work
  sudo patch -p0 -i diff
+ cd $WDIR
 
  #------------------------------------------------------------
  # Make a dmg package and copy it in the script's folder   
  #------------------------------------------------------------
-
- cd $WDIR
+if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
+ echo
+ echo "Saving dmg file."
+ echo
  sudo port dmg gwyddion
  cp $DIRGW/work/*.dmg ../$DIR 
+ echo "A copy of the dmg installation package has been saved in the script's folder"
+ fi
 
  #------------------------------------------------------------
  # Install new version from svn   
@@ -161,8 +166,6 @@ if [ "$TYPE" = "1" ]; then
  
  echo
  echo Done!
- echo
- echo "A copy of the dmg installation package has been saved in the script's folder"
  echo
 
 
@@ -217,11 +220,11 @@ elif [ "$TYPE" = "3" ]; then
  #------------------------------------------------------------
  # Remove splash screen
  #------------------------------------------------------------
- if [ "$1" = "1" ]; then
+ if [ "$1" = "--no-splash" ] || [ "$2" = "--no-splash" ] ; then
  echo
  echo "Disabling splash screen"
  echo
- nosplash $1
+ nosplash $NEW
  fi
 
  #------------------------------------------------------------
@@ -258,14 +261,19 @@ elif [ "$TYPE" = "3" ]; then
 
  cd $DIRGW/work
  sudo patch -p0 -i diff
+ cd $WDIR
 
  #------------------------------------------------------------
  # Make a dmg package and copy it in the script's folder   
  #------------------------------------------------------------
-
- cd $WDIR
- sudo port dmg gwyddion
- cp $DIRGW/work/*.dmg ../$DIR 
+ if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
+  echo
+  echo "Saving dmg file."
+  echo
+  sudo port dmg gwyddion
+  cp $DIRGW/work/*.dmg ../$DIR 
+  echo "A copy of the dmg installation package has been saved in the script's folder"
+ fi
 
  #------------------------------------------------------------
  # Install new version from svn   
@@ -299,7 +307,7 @@ elif [ "$TYPE" = "4" ]; then
 
 elif [ "$TYPE" = "5" ]; then
  echo
- echo "Gsvn-mac - version 20111205"
+ echo "Gsvn-mac - version 20111206"
  echo "Bugs, comments, suggestions: Nicola Ferralis <feranick@hotmail.com>"
  echo "Gsvn is licensed under the GNU Public License v.3"
  echo
