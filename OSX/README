@@ -1,0 +1,35 @@
+GSVN-Mac
+
+This script is for OS X, and it uses a combination of MacPorts an upstream project to manage 
+the installation of various version of Gyddion (stable, development versions...).   
+
+The script requires macports and Xcode to be installed. It has a menu with
+the following choices:
+
+1. Install latest development snapshot
+2. Install latest stable from macports
+3. Install latest stable from upstream
+4. Cleanup previous builds
+
+The script automatically check for the latest versions (svn, macports,
+upstream). In the case of svn, it also makes a dmg package that can be
+ported to other OS X machines.
+
+------
+Usage
+------
+
+0. Make sure you have:
+   - Administration rights on the machine you are running the script.
+   - You have a fully setup MacPorts
+
+1. Copy the script somewhere in your OS X system. 
+2. make it executable ( chmod +x gsvn-mac.sh )
+3. Launch it ( ./gsvn-mac )
+
+Some arguments can be passed at launch time ( ./gsvn -h  for example):
+
+	--no-splash  With this option, gwyddion is compiled without the splash screen
+
+	-h Help
+
