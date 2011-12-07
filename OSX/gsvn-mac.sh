@@ -4,7 +4,7 @@
 # GVSN-mac
 # 
 # Bash script to make and submit gwyddion nightly packages to Ubuntu ppa.
-# v. 20111206
+# v. 20111206b
 #
 # Nicola Ferralis <feranick@hotmail.com>
 # 
@@ -107,7 +107,9 @@ fi
  #------------------------------------------------------------
 
  cp $DIRGW/Portfile .
- sed "s/# revision            1/revision            ${DVER}/" < Portfile > Portfile-svn
+ 
+ sed "s/.*revision.*/revision            ${DVER}/" Portfile > Portfile-svn
+
 
  sudo cp Portfile-svn $DIRGW
  sudo mv $DIRGW/Portfile $DIRGW/Portfile-stable
@@ -117,7 +119,7 @@ fi
  cd work
 
  OLD=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
- echo $OLD
+ 
  echo
  echo "--------------------------------------"
  echo "Current stable in Macports: $OLD"
@@ -307,7 +309,7 @@ elif [ "$TYPE" = "4" ]; then
 
 elif [ "$TYPE" = "5" ]; then
  echo
- echo "Gsvn-mac - version 20111206"
+ echo "Gsvn-mac - version 20111206b"
  echo "Bugs, comments, suggestions: Nicola Ferralis <feranick@hotmail.com>"
  echo "Gsvn is licensed under the GNU Public License v.3"
  echo
