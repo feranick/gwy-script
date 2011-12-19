@@ -4,7 +4,7 @@
 # GVSN-mac
 # 
 # Bash script to make and submit gwyddion nightly packages to Ubuntu ppa.
-# v. 20111206b
+# v. 20111219
 #
 # Nicola Ferralis <feranick@hotmail.com>
 # 
@@ -47,6 +47,8 @@ STR=`echo ${STR:76:10}`
 
 STR2=$(curl http://gwyddion.net/download.php | sed -n '/Stable version/p' | awk '{print $NF}')
 STR2=`echo ${STR2:1:4}`
+
+#MPVER=$(sed -n '/version    /p' < $DIRGW/Portfile | awk '{print $NF}')
 clear
 
 #------------------------------------------------------------
@@ -199,6 +201,7 @@ elif [ "$TYPE" = "3" ]; then
  #------------------------------------------------------------
  
  MPVER=$(sed -n '/version    /p' < Portfile | awk '{print $NF}')
+ echo $mpver
 
  if [ "$MPVER" == "$STR2" ]; then
  echo
@@ -234,14 +237,16 @@ elif [ "$TYPE" = "3" ]; then
  #------------------------------------------------------------ 
 
  cp $DIRGW/Portfile .
- sed "s/version             ${MPVER}/version             ${STR2}/" < Portfile > Portfile-ups
-
+#sed "s/version             ${MPVER}/version             ${STR2}/" < Portfile > Portfile-ups
+ sed "s/.*revision.*/revision            ${STR2}/" Portfile > Portfile-ups
  sudo cp Portfile-ups $DIRGW
  sudo mv $DIRGW/Portfile $DIRGW/Portfile-stable
  sudo cp $DIRGW/Portfile-ups $DIRGW/Portfile
  sudo port extract gwyddion
  cd $DIRGW
  cd work
+
+
 
  OLD=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
  echo $OLD
@@ -268,14 +273,14 @@ elif [ "$TYPE" = "3" ]; then
  #------------------------------------------------------------
  # Make a dmg package and copy it in the script's folder   
  #------------------------------------------------------------
- if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
-  echo
-  echo "Saving dmg file."
-  echo
-  sudo port dmg gwyddion
-  cp $DIRGW/work/*.dmg ../$DIR 
-  echo "A copy of the dmg installation package has been saved in the script's folder"
- fi
+#if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
+#  echo
+#  echo "Saving dmg file."
+#  echo
+#  sudo port dmg gwyddion
+#  cp $DIRGW/work/*.dmg ../$DIR 
+#  echo "A copy of the dmg installation package has been saved in the script's folder"
+# fi
 
  #------------------------------------------------------------
  # Install new version from svn   
@@ -294,8 +299,6 @@ elif [ "$TYPE" = "3" ]; then
  echo
  echo Done!
  echo
- echo "A copy of the dmg installation package has been saved in the script's folder"
- echo
 
  fi
 
@@ -309,7 +312,7 @@ elif [ "$TYPE" = "4" ]; then
 
 elif [ "$TYPE" = "5" ]; then
  echo
- echo "Gsvn-mac - version 20111206b"
+ echo "Gsvn-mac - version 20111219"
  echo "Bugs, comments, suggestions: Nicola Ferralis <feranick@hotmail.com>"
  echo "Gsvn is licensed under the GNU Public License v.3"
  echo
