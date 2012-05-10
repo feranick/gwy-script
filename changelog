@@ -1,3 +1,6 @@
+2012-05-10
+The scripts detects the presence of patches for version 2.26 and disables them for version 2.27 and newer.
+
 2011-12-19
 Fixed several minor bugs, in particular in building stable versions from upstream.
 

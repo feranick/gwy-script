@@ -112,6 +112,24 @@ fi
  
  sed "s/.*revision.*/revision            ${DVER}/" Portfile > Portfile-svn
 
+ #------------------------------------------------------------
+ # Remove patchfile for version 2.26
+ #------------------------------------------------------------
+
+ OLD1=$(sed -n '/version             2/p' Portfile | awk '{print $NF}')
+
+ 
+ if [ "$OLD1" = "2.26" ] ; then
+  echo
+  echo " Version 2.26 detected"
+  echo " Removing 2.26 patches from Portfile" 
+  echo
+  sed "s/patchfile/#patchfile/" Portfile-svn > Portfile-svn2
+  cp Portfile-svn2 Portfile-svn
+ fi
+
+ OLD="gwyddion-$OLD1"
+
 
  sudo cp Portfile-svn $DIRGW
  sudo mv $DIRGW/Portfile $DIRGW/Portfile-stable
@@ -120,7 +138,7 @@ fi
  cd $DIRGW
  cd work
 
- OLD=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
+#OLD=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
  
  echo
  echo "--------------------------------------"
@@ -239,6 +257,26 @@ elif [ "$TYPE" = "3" ]; then
  cp $DIRGW/Portfile .
 #sed "s/version             ${MPVER}/version             ${STR2}/" < Portfile > Portfile-ups
  sed "s/.*revision.*/revision            ${STR2}/" Portfile > Portfile-ups
+
+
+#------------------------------------------------------------
+# Remove patchfile for version 2.26
+#------------------------------------------------------------
+
+OLD1=$(sed -n '/version             2/p' Portfile | awk '{print $NF}')
+
+
+if [ "$OLD1" = "2.26" ] ; then
+echo
+echo " Version 2.26 detected"
+echo " Removing 2.26 patches from Portfile" 
+echo
+sed "s/patchfile/#patchfile/" Portfile-ups > Portfile-ups2
+cp Portfile-ups2 Portfile-ups
+fi
+
+OLD="gwyddion-$OLD1"
+
  sudo cp Portfile-ups $DIRGW
  sudo mv $DIRGW/Portfile $DIRGW/Portfile-stable
  sudo cp $DIRGW/Portfile-ups $DIRGW/Portfile
@@ -248,8 +286,8 @@ elif [ "$TYPE" = "3" ]; then
 
 
 
- OLD=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
- echo $OLD
+#OLD=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
+ 
  echo
  echo "--------------------------------------"
  echo "Current stable in Macports: $OLD"
@@ -273,14 +311,14 @@ elif [ "$TYPE" = "3" ]; then
  #------------------------------------------------------------
  # Make a dmg package and copy it in the script's folder   
  #------------------------------------------------------------
-#if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
-#  echo
-#  echo "Saving dmg file."
-#  echo
-#  sudo port dmg gwyddion
-#  cp $DIRGW/work/*.dmg ../$DIR 
-#  echo "A copy of the dmg installation package has been saved in the script's folder"
-# fi
+# if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
+#   echo
+#   echo "Saving dmg file."
+#   echo
+#   sudo port dmg gwyddion
+#   cp $DIRGW/work/*.dmg ../$DIR 
+#   echo "A copy of the dmg installation package has been saved in the script's folder"
+#fi
 
  #------------------------------------------------------------
  # Install new version from svn   
@@ -312,7 +350,7 @@ elif [ "$TYPE" = "4" ]; then
 
 elif [ "$TYPE" = "5" ]; then
  echo
- echo "Gsvn-mac - version 20111219"
+ echo "Gsvn-mac - version 20120510"
  echo "Bugs, comments, suggestions: Nicola Ferralis <feranick@hotmail.com>"
  echo "Gsvn is licensed under the GNU Public License v.3"
  echo
