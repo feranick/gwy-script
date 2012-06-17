@@ -4,7 +4,7 @@
 # GVSN-mac
 # 
 # Bash script to make and submit gwyddion nightly packages to Ubuntu ppa.
-# v. 20120618
+# v. 20120618b
 #
 # Nicola Ferralis <feranick@hotmail.com>
 # 
@@ -191,7 +191,7 @@ if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
  #------------------------------------------------------------
 
  rm -r $TMP
-# sudo port clean gwyddion
+ sudo port clean gwyddion
  
  echo
  echo Done!
@@ -357,7 +357,7 @@ elif [ "$TYPE" = "4" ]; then
 
 elif [ "$TYPE" = "5" ]; then
  echo
- echo "Gsvn-mac - version 20120618"
+ echo "Gsvn-mac - version 20120618b"
  echo "Bugs, comments, suggestions: Nicola Ferralis <feranick@hotmail.com>"
  echo "Gsvn is licensed under the GNU Public License v.3"
  echo

@@ -1,3 +1,6 @@
+2012-06-17b
+Re-enabled port cleanup (it was commented out to allow debugging).
+
 2012-06-17
 Fixed a bug that prevented the addition of a new pixmap file (and therefore preventing compilation).
 
