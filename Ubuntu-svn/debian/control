@@ -1,0 +1,155 @@
+Source: gwyddion
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Uploaders: Jan Beyer <jan@beathovn.de>,
+           Andreas Tille <tille@debian.org>
+Section: science
+Priority: optional
+Build-Depends: cdbs,
+               debhelper (>= 9),
+               autotools-dev,
+               pkg-config,
+               libgtk2.0-dev,
+               libgtkglext1-dev,
+               libfftw3-dev,
+               libminizip-dev,
+               libxmu6,
+               python-gtk2-dev,
+               libgtksourceview2.0-dev,
+               python,
+               ruby,
+               libgconf2-dev,
+               libxml2-dev,
+               chrpath
+Standards-Version: 3.9.8
+Vcs-Browser: http://anonscm.debian.org/viewvc/debian-med/trunk/packages/gwyddion/trunk/
+Vcs-Svn: svn://anonscm.debian.org/debian-med/trunk/packages/gwyddion/trunk/
+Homepage: http://gwyddion.net/
+
+Package: gwyddion
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         gwyddion-common (= ${source:Version})
+Suggests: gwyddion-plugins
+Description: Scanning Probe Microscopy visualization and analysis tool
+ Gwyddion is a modular program for Scanning Probe Microscopy (SPM) data
+ visualization and analysis. It is primarily intended for analysis of height
+ field data obtained by microscopy techniques like
+  * Atomic Force Microscopy (AFM),
+  * Magnetic Force Microscopy (MFM),
+  * Scanning Tunneling Microscopy (STM),
+  * Near-field Scanning Optical Microscopy (SNOM or NSOM)
+ and others. However, it can be used for arbitrary height field and
+ image analysis.
+ .
+ This package contains the main application and its modules. It also contains
+ a GNOME (and Xfce) thumbnailer which creates previews for all file types known
+ to Gwyddion.
+ .
+ Gwyddion's Python scripting interface Pygwy is also included.
+
+Package: gwyddion-common
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Recommends: gwyddion (>= ${source:Version})
+Description: architecture-independent files for Gwyddion SPM analysis tool
+ Gwyddion is a modular program for Scanning Probe Microscopy (SPM) data
+ visualization and analysis. It is primarily intended for analysis of height
+ field data obtained by microscopy techniques like
+  * Atomic Force Microscopy (AFM),
+  * Magnetic Force Microscopy (MFM),
+  * Scanning Tunneling Microscopy (STM),
+  * Near-field Scanning Optical Microscopy (SNOM or NSOM)
+ and others. However, it can be used for arbitrary height field and
+ image analysis.
+ .
+ This package contains architecture-independent files for Gwyddion - a modular
+ program for Scanning Probe Microscopy data visualization and analysis.
+
+Package: gwyddion-plugins
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         gwyddion,
+         python | ruby
+Description: plugins for Gwyddion SPM analysis tool
+ Gwyddion is a modular program for Scanning Probe Microscopy (SPM) data
+ visualization and analysis. It is primarily intended for analysis of height
+ field data obtained by microscopy techniques like
+  * Atomic Force Microscopy (AFM),
+  * Magnetic Force Microscopy (MFM),
+  * Scanning Tunneling Microscopy (STM),
+  * Near-field Scanning Optical Microscopy (SNOM or NSOM)
+ and others. However, it can be used for arbitrary height field and
+ image analysis.
+ .
+ This package yet contains only sample plugins for Gwyddion in Python, Ruby
+ and Perl.
+ .
+ If you would like to extend Gwyddion's functionality, you are encouraged
+ to consider writing Gwyddion modules instead of plugins. For help on this, see
+ the package libgwyddion20-doc.
+
+Package: libgwyddion2-0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         gwyddion-common (= ${source:Version})
+Suggests: libgwyddion20-doc
+Description: libraries for Gwyddion SPM analysis tool
+ Gwyddion is a modular program for Scanning Probe Microscopy (SPM) data
+ visualization and analysis. It is primarily intended for analysis of height
+ field data obtained by microscopy techniques like
+  * Atomic Force Microscopy (AFM),
+  * Magnetic Force Microscopy (MFM),
+  * Scanning Tunneling Microscopy (STM),
+  * Near-field Scanning Optical Microscopy (SNOM or NSOM)
+ and others. However, it can be used for arbitrary height field and
+ image analysis.
+ .
+ This library package contains all the Gwyddion libraries.
+
+Package: libgwyddion20-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libgwyddion2-0 (= ${binary:Version})
+Suggests: libgwyddion20-doc
+Description: header files for Gwyddion SPM analysis tool
+ Gwyddion is a modular program for Scanning Probe Microscopy (SPM) data
+ visualization and analysis. It is primarily intended for analysis of height
+ field data obtained by microscopy techniques like
+  * Atomic Force Microscopy (AFM),
+  * Magnetic Force Microscopy (MFM),
+  * Scanning Tunneling Microscopy (STM),
+  * Near-field Scanning Optical Microscopy (SNOM or NSOM)
+ and others. However, it can be used for arbitrary height field and
+ image analysis.
+ .
+ This package contains the header files for libgwyddion2-0.
+
+Package: libgwyddion20-doc
+Architecture: all
+Section: doc
+Depends: w3m | www-browser,
+         ${misc:Depends}
+Suggests: libglib2.0-doc,
+          libpango1.0-doc,
+          libgtk2.0-doc,
+          libgtkglext1-doc
+Description: HTML library API documentation for Gwyddion SPM analysis tool
+ Gwyddion is a modular program for Scanning Probe Microscopy (SPM) data
+ visualization and analysis. It is primarily intended for analysis of height
+ field data obtained by microscopy techniques like
+  * Atomic Force Microscopy (AFM),
+  * Magnetic Force Microscopy (MFM),
+  * Scanning Tunneling Microscopy (STM),
+  * Near-field Scanning Optical Microscopy (SNOM or NSOM)
+ and others. However, it can be used for arbitrary height field and
+ image analysis.
+ .
+ This package contains the HTML API documentation of all the Gwyddion libraries.
+ There is also a tutorial on writing Gwyddion modules included.

@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+  
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/gnome.mk
+
+#DEB_CONFIGURE_EXTRA_FLAGS := --libexecdir=\$${libdir} CFLAGS= "-Wall -g" --disable-rpath
+DEB_CONFIGURE_EXTRA_FLAGS := --libexecdir=\$${libdir} --disable-rpath
+#DEB_BUILDDIR := $(DEB_SRCDIR)/debian/tmp
+DEB_DH_INSTALL_SOURCEDIR := $(DEB_SRCDIR)/debian/tmp
+DEB_INSTALL_CHANGELOGS_ALL :=
+DEB_INSTALL_DOCS_gwyddion := modules/pygwy/README.pygwy
+DEB_INSTALL_DOCS_gwyddion-plugins := plugins/process/README
+version=$(shell dpkg-parsechangelog | grep '^Version: ' | sed -e 's/^Version: //')
+DEB_DH_MAKESHLIBS_ARGS_gwyddion := -n -Xgwyddion
+DEB_DH_MAKESHLIBS_ARGS_libgwyddion2-0 := -V'libgwyddion2-0 (>= ${version})'
+
+clean::
+	dh_clean
+	rm -rf data/gwyddion.desktop
+
+install/gwyddion::
+	find debian/tmp/usr/lib/gwyddion/modules -name "*.la" -exec rm {} \;
+	rm debian/tmp/usr/lib/gwyddion/python/Gwyddion/*.py?
+	chrpath -d debian/tmp/usr/bin/gwyddion*
+
+install/libgwyddion2-0::
+	rm debian/tmp/usr/lib/python2.7/dist-packages/gwy.la
+
+get-orig-source::
+	if [ -x /usr/bin/uscan ]; then \
+		/usr/bin/uscan --force-download --verbose; \
+	else \
+		echo "Could not find /usr/bin/uscan to download source."; \
+		echo " Please install the devscripts package."; \
+	fi

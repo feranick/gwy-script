@@ -1,0 +1,494 @@
+gwyddion (2.47.20161122-0~ppa1~xenial1) xenial; urgency=medium
+
+  * Experimental nightly build.
+
+ -- Nicola Ferralis <feranick@hotmail.com>  Wed, 23 Nov 2016 10:09:19 -0500
+
+gwyddion (2.47-0~ppa1~xenial1) xenial; urgency=medium
+
+  * New upstream release.
+  * Backport to Ubuntu Xenial.
+
+ -- Nicola Ferralis <feranick@hotmail.com>  Fri, 18 Nov 2016 13:54:52 -0500
+
+gwyddion (2.46-1) unstable; urgency=medium
+
+  * debian/control:
+    - add libminizip-dev to Build-Depends to support loading
+      zip-compressed file formats
+      Closes: #840912
+      LP: #1553794
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 17 Oct 2016 21:06:51 +0200
+
+gwyddion (2.45-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control:
+    - Re-add libfftw3-dev to Build-Depends, which got lost during
+      2.43-2 release
+    - New standards version 3.9.8 (no changes needed)
+  * debian/watch
+    - add ability to check upstream signature of released files
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 26 Apr 2016 21:49:38 +0200
+
+gwyddion (2.44-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 24 Jan 2016 14:20:30 +0100
+
+gwyddion (2.43-2) unstable; urgency=medium
+
+  * cme fix dpkg-control
+  * gwyddion-plugins drop Depends: perl5
+    Closes: #808777
+  * Several DEP5 fixes
+
+ -- Andreas Tille <tille@debian.org>  Tue, 22 Dec 2015 21:40:23 +0100
+
+gwyddion (2.43-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 06 Dec 2015 21:44:42 +0100
+
+gwyddion (2.42-1) unstable; urgency=medium
+
+  * New upstream release
+  * Removed menu file, as gwyddion provides a .desktop file
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 22 Oct 2015 21:09:48 +0200
+
+gwyddion (2.41-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control:
+    - Fixed Vcs-* fields to point to anonscm.debian.org
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 29 May 2015 21:43:14 +0200
+
+gwyddion (2.40-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control:
+    - New standards version 3.9.6 (no changes needed)
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 07 May 2015 21:52:24 +0200
+
+gwyddion (2.38-2) unstable; urgency=medium
+
+  * Include upstream patch to fix a crash when saving results from
+    the statistics tool
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 30 Sep 2014 21:31:09 +0200
+
+gwyddion (2.38-1) unstable; urgency=medium
+
+  * New upstream release
+    - includes user-guide-modules in package gwyddion-common to provide
+      integrated help
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 25 Sep 2014 21:18:27 +0200
+
+gwyddion (2.37-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 29 Jun 2014 21:39:21 +0200
+
+gwyddion (2.36-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 04 Apr 2014 21:41:17 +0200
+
+gwyddion (2.35-1) unstable; urgency=medium
+
+  * New upstream release
+    - Dropped patch for italian translation, as this is now fixed upstream
+  * debian/control:
+    - Incremented Standards-Version to reflect conformance with Policy 3.9.5
+      (no changes needed)
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 03 Mar 2014 21:38:06 +0100
+
+gwyddion (2.34-3) unstable; urgency=medium
+
+  * Enable compilation of patched italian translation, to
+    actually fix the crash in italian localization
+
+ -- Jan Beyer <jan@beathovn.de>  Sat, 18 Jan 2014 22:30:25 +0100
+
+gwyddion (2.34-2) unstable; urgency=medium
+
+  * Incorporate upstream patch to fixing a crash when Gwyddion
+    is run in Italian
+    Closes: #734614
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 10 Jan 2014 21:12:30 +0100
+
+gwyddion (2.34-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 15 Dec 2013 20:57:44 +0100
+
+gwyddion (2.33-1) unstable; urgency=low
+
+  * New upstream release
+    - Drop build patch for big-endian architectures, as it is
+      included upstream
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 20 Oct 2013 21:47:36 +0200
+
+gwyddion (2.32-3) unstable; urgency=low
+
+  * Add Python module gwy.so which didn't get installed previously
+    to binary package libgwyddion2-0
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 15 Oct 2013 21:51:01 +0200
+
+gwyddion (2.32-2) unstable; urgency=low
+
+  * Include a patch to fix build error on big endian architectures
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 29 Sep 2013 21:57:23 +0200
+
+gwyddion (2.32-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 15 Sep 2013 21:39:02 +0200
+
+gwyddion (2.31-2) unstable; urgency=low
+
+  * Upload to unstable
+  * debian/control:
+    - New standards version 3.9.4 (no changes needed)
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 30 Jun 2013 21:52:32 +0200
+
+gwyddion (2.31-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 22 Feb 2013 21:07:16 +0100
+
+gwyddion (2.30-2) experimental; urgency=low
+
+  * Include upstream patch to fix crashing colour selectors
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 03 Feb 2013 21:06:11 +0100
+
+gwyddion (2.30-1) experimental; urgency=low
+
+  * New upstream release
+    Closes: #688771
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 30 Sep 2012 23:04:32 +0200
+
+gwyddion (2.29-1) experimental; urgency=low
+
+  * New upstream version
+    Closes: #686688
+  * debian/copyright: Remove separating comma in Files field
+
+ -- Andreas Tille <tille@debian.org>  Tue, 11 Sep 2012 09:22:34 +0200
+
+gwyddion (2.28-2) unstable; urgency=low
+
+  * debian/gwyddion-common.install
+    - Install also GNOME 3 thumbnailer file (Closes: #675132)
+
+ -- Jan Beyer <jan@beathovn.de>  Wed, 30 May 2012 21:28:59 +0200
+
+gwyddion (2.28-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/rules:
+    - remove hardcoded CFLAGS definition to allow CDBS to handle
+      hardening flags
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 28 May 2012 21:44:38 +0200
+
+gwyddion (2.27-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/patches/glib-single-include.patch dropped,
+    as it is included upstream
+  * debian/copyright: readded missing copyright holders, that
+    cme fix dpkg-copyright erased
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 23 Apr 2012 21:52:45 +0200
+
+gwyddion (2.26-2) unstable; urgency=low
+
+  * debian/patches/glib-single-include.patch:
+     - Use fix-glib-includes.sh script to create the patch
+     - Patch was reviewed and enhanced by upstream
+    Closes: #665554
+  * debian/README.Debian + debian/README.source: Split up content
+    of former single file (README.Debian) into two files because the
+    user does not need to be confronted with developer relevant
+    informarmation
+  * debhelper 9 (control+compat)
+  * debian/control:
+     - Standards-Version: 3.9.3 (no changes needed)
+     - Fixed Vcs fields
+     - Make descriptions more verbose
+  * debian/copyright: DEP5 fixes verified using
+      cme fix dpkg-copyright
+  * debian/rules: Fixed clean target
+  * debian/upstream: Added references
+
+ -- Andreas Tille <tille@debian.org>  Thu, 29 Mar 2012 08:47:46 +0200
+
+gwyddion (2.26-1) unstable; urgency=low
+
+  * New upstream release
+  * Changed to .tar.xz upstream tarball
+  * Removed patch gwyddion-2.25-get-rid-of-gwy_byteswaped_copy.patch
+    as it is applied upstream
+
+ -- Jan Beyer <jan@beathovn.de>  Sat, 07 Jan 2012 21:59:38 +0100
+
+gwyddion (2.25-2) unstable; urgency=low
+
+  * Adding patch gwyddion-2.25-get-rid-of-gwy_byteswaped_copy.patch
+    to fix a fatal compiler warning on big endian architectures
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 09 Aug 2011 21:34:00 +0200
+
+gwyddion (2.25-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Sun, 12 Jun 2011 12:36:24 +0200
+
+gwyddion (2.24-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    - Incremented Standards-Version to reflect conformance with Policy 3.9.2
+      (no changes needed)
+  * debian/rules:
+    - removing byte-compiled python source files
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 08 Apr 2011 20:49:23 +0200
+
+gwyddion (2.23-1) unstable; urgency=low
+
+  * New upstream release
+  * libgwyddion20-doc now depends on w3m instead of lynx, which has lower
+    priority
+
+ -- Jan Beyer <jan@beathovn.de>  Sat, 12 Mar 2011 18:35:38 +0100
+
+gwyddion (2.22-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 09 Dec 2010 21:07:50 +0100
+
+gwyddion (2.21-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    - Incremented Standards-Version to reflect conformance with Policy 3.9.1
+      (no changes needed).
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 29 Oct 2010 22:56:18 +0200
+
+gwyddion (2.20-1) unstable; urgency=low
+
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Bumped Standards-Version to 3.9.0 (no changes needed)
+  * New upstream release
+    - fixes issue with raising string in exceptions in Python script
+      (Closes: #585235)
+
+ -- Jan Beyer <jan@beathovn.de>  Wed, 30 Jun 2010 22:00:59 +0200
+
+gwyddion (2.19-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed patch gwyddion-2.18-remote-new-x11.patch, as the problem is fixed
+    upstream
+  * Removed patch fix-shared-mime-info.patch, as the problem is fixed upstream
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 17 Dec 2009 22:17:12 +0100
+
+gwyddion (2.18-2) unstable; urgency=low
+
+  * Include patch gwyddion-2.18-remote-new-x11.patch from upstream,
+    fixing start failure when started from desktop menu entry
+  * Improving patch fix-shared-mime-info.patch to fix not only gwyddion.xml but
+    also the file which it is created from
+
+ -- Jan Beyer <jan@beathovn.de>  Sat, 07 Nov 2009 21:07:44 +0100
+
+gwyddion (2.18-1) unstable; urgency=low
+
+  * New upstream release
+  * Added patch fix-shared-mime-info.patch fixing wrong offset in gwyddion.xml
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 05 Nov 2009 22:39:54 +0100
+
+gwyddion (2.17-1) unstable; urgency=low
+
+  * New upstream release
+  * Dropping .la-files from libgwyddion20-dev
+  * Bumped standards version to 3.8.3 (no changes needed)
+  * Refreshed patches and updated headers to DEP3 format
+  * No longer shipping .la-files according to squeeze release goal
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 22 Sep 2009 20:59:21 +0200
+
+gwyddion (2.16-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped standards version to 3.8.2 (no changes needed). 
+  * Dropped Build-Dependency on libtiff4-dev (functionality provided now by
+    upstream).
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 26 Jun 2009 22:11:59 +0200
+
+gwyddion (2.15-1) unstable; urgency=low
+
+  * New upstream release.
+    - Dropping upstream patch gwyddion-2.14-browser-invalid-iter.patch
+      which was added in 2.14-2.
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 21 May 2009 20:47:54 +0200
+
+gwyddion (2.14-2) unstable; urgency=low
+
+  * Incorporating an upstream patch to fix critical warnings on creation of
+    new channels or graphs, which may lead to a shutdown of gwyddion.
+  * Make backporter's life easier by adjusting build-dependency for FFTW3 to
+    libfftw3 | fftw3.
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 04 May 2009 22:13:28 +0200
+
+gwyddion (2.14-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped standards version to 3.8.1 (no changes needed).
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 17 Mar 2009 20:44:19 +0100
+
+gwyddion (2.13-1) unstable; urgency=low
+
+  * New upstream release.
+  * Gwyddion's Python scripting interface Pygwy is now enabled
+    debian/control:
+    - additional Build-Depends on python-gtk2-dev and libgtksourceview2.0-dev
+    - adapted long description of gwyddion
+    debian/rules:
+    - install also README.pygwy
+  * No longer install our own gwyddion-thumbnailer.schemas, as upstream now
+    install correct file.
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 09 Feb 2009 20:59:28 +0100
+
+gwyddion (2.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed patch fix-crash-on-no-mask-present_svn8911.patch, as this is now
+    in upstream's sources.
+  * Added Build-Dependency on libgconf2-dev for thumbnail creation in
+    TMS-compliant desktop environments.
+  * gwyddion-thumbnailer also needs a chrpath-call in debian/rules to remove
+    its RPATH.
+  * Added and installed hand-fixed gwyddion-thumbnailer.schemas, as upstream's
+    file is broken.
+  * configure-option --disable-desktop-file-update is no longer needed.
+  * Additional Build-Dependency libxml2-dev enables import of SPML files.
+  * Cleaned up and extended debian/README.Debian.
+  * Lintian-override for gwyddion removed - it was no longer necessary.
+  * Installing upstream's README for plugin-creation in gwyddion-plugins.
+
+ -- Jan Beyer <jan@beathovn.de>  Fri, 09 Jan 2009 20:40:33 +0100
+
+gwyddion (2.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updating debian/copyright.
+  * Recreating debian/patches/fix-rpath-issue.patch.
+  * Added a patch from upstream's SVN (commit 8911,
+    fix-crash-on-no-mask-present_svn8911.patch) fixing a possible crash when no
+    mask is present.
+  * debian/control:
+    - set policy version 3.8.0 for real.
+    - improve short descriptions.
+    - Make gwyddion binNMU-safe by making gwyddion-common recommend
+      gwyddion(>=${source:Version}).
+    - gwyddion-plugins and libgwyddion20-doc now Depend: on ${misc:Depends}
+      (thanks, lintian).
+  * debian/rules:
+    - docs now get installed into every binary package.
+    - upstream's ChangeLog doesn't get installed at all any longer, as it's
+      empty anyway.
+    - removing config.log explicitly in clean target is no longer necessary.
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 30 Dec 2008 21:28:22 +0100
+
+gwyddion (2.10-1) unstable; urgency=low
+
+  [Jan Beyer]
+  * New upstream release
+  * debian/control: Streamlining to Debian-Med packaging policy
+    - Changed maintainer to Debian-Med Packaging Team.
+    - Setting DM-Upload-Allowed: yes.
+    - Setting myself as uploader.
+    - Correcting spelling of python -> Python (thanks, lintian). Also
+      capitalizing Perl and Ruby.
+    - Adding ${shlibs:Depends} to gwyddion-plugins' dependencies (thanks,
+      lintian).
+  * Changed to new policy 3.8.0:
+    - Added README.source, pointing out quilt-usage and referring to
+      /usr/share/doc/quilt/README.source.
+  * Patches updated.
+  * Clean config.log in debian/rules.
+
+  [David Paleino]
+  * debian/control
+    - Added ?rev=0&sc=0 to Vcs-Browser fields
+    - Sanitized Vcs-* fields
+
+ -- Jan Beyer <jan@beathovn.de>  Mon, 30 Jun 2008 22:09:08 +0200
+
+gwyddion (2.9-3) unstable; urgency=low
+
+  * Changed to new policy 3.7.3 (no changes needed).
+  * Adding fix-rpath-issue.diff patch, changing all occurences of
+    hardcode_into_libs={yes,$hardcode_into_libs} in configure into
+    hardcode_into_libs=no, which eliminates all rpaths in libraries. 
+    /usr/bin/gwyddion itself still needs chrpath.
+  * Adding python and ruby to Build-Depends, so that plugins will work.
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 11 Dec 2007 21:25:00 +0100
+
+gwyddion (2.9-2) unstable; urgency=low
+
+  * Fixed debian/copyright.
+  * Added patch to escape hyphens in manpage data/gwyddion.1.
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 29 Nov 2007 16:52:00 +0100
+
+gwyddion (2.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Gwyddion::dump.3pm manpage section fixed (Closes: #449296)
+
+ -- Jan Beyer <jan@beathovn.de>  Thu, 25 Oct 2007 10:22:00 +0200
+
+gwyddion (2.8-1) unstable; urgency=low
+
+  * Initial release (Closes: #440662)
+
+ -- Jan Beyer <jan@beathovn.de>  Tue, 18 Sep 2007 11:32:03 +0200
+

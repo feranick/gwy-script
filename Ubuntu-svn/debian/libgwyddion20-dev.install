@@ -1,0 +1,5 @@
+usr/lib/libgwy*2.so
+usr/lib/gwyddion/include/
+usr/lib/pkgconfig/
+usr/include/gwyddion/lib*/
+usr/include/gwyddion/app/

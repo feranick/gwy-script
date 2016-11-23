@@ -1,0 +1,39 @@
+Gwyddion for Debian - Packaging Issues
+======================================
+
+1. dpkg-shlibdeps warnings
+
+dpkg-shlibdeps emits currently some warnings like:
+
+  dpkg-shlibdeps: warning: symbol gwy_layer_basic_set_gradient_key used by
+  debian/gwyddion/usr/lib/gwyddion/modules/process/polylevel.so found in
+  none of the libraries.
+
+These symbols are resolved through the main application, which takes care of
+loading all necessary libraries. The modules then don't need to link
+individually to them, which causes this warning. The complete explanation can
+be found here:
+http://sourceforge.net/mailarchive/forum.php?thread_name=48762E7D.2000000%40beathovn.de&forum_name=gwyddion-devel
+
+2. RPATHs
+
+On amd64, all binaries get rpaths to /usr/lib set.
+The fix-rpath-issue.diff replaces all occurences of hardcode_into_libs=... into
+hardcode_into_libs=no in the configure script. This gets rid off the rpaths in
+the libraries. For the binaries in /usr/bin/, chrpath is still necessary.
+
+3. debian/copyright notice
+
+Following an advice from tiCo (Mario Iselis) on #debian-mentors, I wrote the
+debian/copyright file in such a way, that all unique combinations of copyright
+holders and licenses got one machine-interpretable entry, regardless of the
+copyright year. I.e., if there are several files mentioned and a range of years,
+the given copyright years indicate the widest range, which covers all actual
+copyright years of the files.
+
+4. -dev package is architecture-dependent
+
+The -dev package is architecture-dependent because of the files
+gwyddion.pc and gwyconfig.h which are architecture dependent.
+
+  -- Jan Beyer <jan@beathovn.de>  Mon, 09 Feb 2009 22:02:19 +0100

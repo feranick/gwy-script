@@ -1,0 +1,367 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gwyddion
+Upstream-Contact: David Necas (Yeti) <yeti@gwyddion.net>
+                  Petr Klapetek <klapetek@gwyddion.net>
+Source: http://gwyddion.net/download
+
+Files: *
+Copyright: 2003-2016 David Necas (Yeti) <yeti@gwyddion.net>
+           2003-2016 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2007, 2008 Jan Beyer <jan@beathovn.de>
+License: GPL-2+
+
+Files: INSTALL
+Copyright: 1994-1996, 1999- 2002 Free SoftwareFoundation, Inc.
+License: free_documentation
+ This file is free documentation; the Free Software Foundation gives
+ unlimited permission to copy, distribute and modify it.
+
+Files: app/remote.c
+Copyright: 2000-2004 Sven Neumann <sven@gimp.org>
+           2000-2004 Simon Budig <simon@gimp.org>
+           2007 David Necas (Yeti) <yeti@gwyddion.net>
+           2007 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: install-sh
+Copyright: 1994 X Consortium
+License: PD
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to
+ deal in the Software without restriction, including without limitation the
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+ X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
+ TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ .
+ Except as contained in this notice, the name of the X Consortium shall not
+ be used in advertising or otherwise to promote the sale, use or other deal-
+ ings in this Software without prior written authorization from the X Consor-
+ tium.
+ .
+ FSF changes to this file are in the public domain.
+
+Files: libgwyddion/gwyfdcurvepreset.c libgwyddion/gwynlfit.* libgwyddion/gwynlfitpreset.*
+       libgwydgets/gwy3dview.*
+Copyright: 2000-2004 Martin Siler <silerm@physics.muni.cz>
+           2003-2006 David Necas (Yeti) <yeti@gwyddion.net>
+           2003-2006 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: libgwyddion/gwymath.c
+Copyright: 1991, 1992, 1996, 1997, 1999 Free Software Foundation, Inc.
+License: GPL-2+ or LGPL-2.1+
+
+Files: libgwydgets/gwycolorbutton.*
+Copyright: 1998, 1999 Red Hat, Inc.
+License: LGPL-2+
+
+Files: libgwydgets/gwycurve.c
+Copyright: 1997 David Mosberger
+           2005 Chris Anderson <sidewinder.asu@gmail.com>
+License: LGPL-2+ or GPL-2+
+Comment:
+ The original file was part of the GIMP Toolkit and copyrighted by David
+ Mosberger, licensed under the GNU LGPL-2+. Chris Anderson modified the file for
+ Gwyddion and put the resulting file under the GNU GPL-2+.
+
+Files: libgwydgets/gwycurve.h
+Copyright: 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
+           2005 Chris Anderson <sidewinder.asu@gmail.com>
+License: LGPL-2+ or GPL-2+
+Comment:
+ The original file was part of the GIMP Toolkit and copyrighted by Peter Mattis,
+ Spencer Kimball and Josh MacDonald, licensed under the GNU LGPL-2+. Chris
+ Anderson modified the file for Gwyddion and put the resulting file under the
+ GNU GPL-2+.
+
+Files: libgwydgets/gwy*ruler.*
+Copyright: 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
+License: LGPL-2+
+
+Files: libprocess/fractals.c
+Copyright: 2004 Jindrich Bilek
+License: GPL-2+
+
+Files: libprocess/spectra.* modules/tools/spectro.c
+Copyright: 2003-2007 Owain Davies <owain.davies@blueyonder.co.uk>
+           2003-2007 David Necas (Yeti) <yeti@gwyddion.net>
+           2003-2007 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: m4/pkg.m4
+Copyright: 2004 Scott James Remnant <scott@netsplit.com>
+License: GPL-2+
+
+Files: modules/file/apefile.c
+Copyright: 2005 David Necas (Yeti) <yeti@gwyddion.net>
+           2005 Petr Klapetek <klapetek@gwyddion.net>
+           Wine project
+License: GPL-2+ or LGPL-2.1+
+Comment:
+ The file is copyright by David Necas and Petr Klapetek (GPL-2+ licensed), but
+ the date conversion code is copied from Wine and thus copyrighted by the Wine
+ project (LGPL-2.1+ licensed). No copyright year is given.
+
+Files: modules/file/burleigh_bii.c
+Copyright: 2006 David Necas (Yeti)
+           2006 Petr Klapetek <klapetek@gwyddion.net>
+           2006 Hans-Peter Doerr <doerr@cip.physik.uni-freiburg.de>
+License: GPL-2+
+
+Files: modules/file/createc.c modules/file/stmprg.c
+Copyright: 2004 Rok Zitko <rok.zitko@ijs.si>
+License: GPL-2+
+
+Files: modules/file/omicronmatrix.c
+Copyright: 2008 Philipp Rahe <hquerquadrat@gmail.com>
+           2008 David Necas <yeti@gwyddion.net>
+License: GPL-2+
+
+Files: modules/file/hdf4file.c
+Copyright: 2006 David Necas (Yeti) <yeti@gwyddion.net>
+           2006 Petr Klapetek <klapetek@gwyddion.net>
+           2006 Markus Pristovsek <prissi@gift.physik.tu-berlin.de>
+License: GPL-2+
+
+Files: modules/file/jpk.h modules/file/jpkscan.c
+Copyright: 2005  JPK Instruments AG <neumann@jpk.com>
+License: GPL-2+
+
+Files: modules/process/grain_stat.c
+Copyright: 2014 David Necas (Yeti) <yeti@gwyddion.net>
+           2014 Petr Klapetek <klapetek@gwyddion.net>
+           2014  Sven Neumann <neumann@jpk.com>
+License: GPL-2+
+
+Files: modules/file/mifile.c modules/process/fft_filter_2d.c
+Copyright: 2005 Chris Anderson, Molecular Imaging Corp <sidewinder.asu@gmail.com>
+License: GPL-2+
+
+Files: modules/file/nanotop.c
+Copyright: 2006 Alexander Kovalev <av_kov@tut.by>
+License: GPL-2+
+
+Files: modules/tools/distance.c
+Copyright: 2003-2006 Nenad Ocelic <ocelic@biochem.mpg.de> 	 
+           2003-2006 David Necas (Yeti) <yeti@gwyddion.net>
+           2003-2006 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: modules/tools/roughness.c
+Copyright: 2006-2007 Martin Hason <hasonm@physics.muni.cz>
+           2006-2007 David Necas (Yeti) <yeti@gwyddion.net>
+           2006-2007 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: app/remote-win32.c
+Copyright: 2007 David Necas (Yeti) <yeti@gwyddion.net>
+           2007 Jan Horak <xhorak@gmail.com>
+License: GPL-2+
+
+Files: modules/pygwy/pygwy-console.*
+Copyright: Jan Horak <xhorak@gmail.com>
+License: GPL-2+
+
+Files: po/Makefile.in.in
+Copyright: 1995-1997, 2000-2006 Ulrich Drepper <drepper@gnu.ai.mit.edu>
+License: other
+ This file can be copied and used freely without restrictions.  It can
+ be used in projects which are not available under the GNU General Public
+ License but which still want to provide support for the GNU gettext
+ functionality.
+ Please note that the actual code of GNU gettext is covered by the GNU
+ General Public License and is *not* in the public domain.
+ .
+ On Debian systems, the complete text of the GNU General Public License (GPL)
+ and the GNU Lesser General Public License (LGPL) can be found in
+ `/usr/share/common-licenses/'.
+
+Files: app/ige-mac-menu.*
+Copyright: 2007 Pioneer Research Center USA, Inc.
+           2007, 2008 Imendio AB
+License: LGPL-2.1
+
+Files: app/mac_integration.*
+Copyright: 2009 Andrey Gruzdev <gruzdev@ntmdt.ru>
+License: GPL-2+
+
+Files: modules/file/omicronflat.c
+Copyright: 2009 Francois Bianco (fbianco) <francois.bianco@unige.ch>
+License: GPL-2+
+
+Files: modules/file/leica.c modules/file/nanoscantech.c modules/file/oldmda.c
+       modules/file/renishaw.c modules/file/tiaser.c
+       modules/file/wipfile.c modules/graph/graph_dos_spectrum.c modules/graph/graph_filter.c
+       modules/process/averaging.c modules/process/grain_edge.c modules/process/mcrop.c
+       modules/process/logistic.c
+Copyright: 2010-2016 David Necas (Yeti) <yeti@gwyddion.net>
+           2010-2016 Petr Klapetek <klapetek@gwyddion.net>
+           2010-2016 Daniil Bratashov <dn2010@gmail.com>
+License: GPL-2+
+
+Files: libprocess/natural.*
+Copyright: 2009 Ross Hemsley <rh7223@bris.ac.uk>
+           2009 David Necas (Yeti) <yeti@gwyddion.net>
+           2009 Petr Klapetek <klapetek@gwyddion.net>
+License: GPL-2+
+
+Files: libprocess/stats_uncertainty.*
+Copyright: 2003-2009 Anna Campbellova <acampbellova@cmi.cz>
+License: GPL-2+
+
+Files: modules/pygwy/gwy.c
+Copyright: 2012 David Necas (Yeti) <yeti@gwyddion.net>
+           2012 Petr Klapetek <klapetek@gwyddion.net>
+           2012 Jozef Vesely <vesely@gjh.sk>
+License: GPL-2+
+
+Files: modules/file/apedaxfile.c
+Copyright: 2005 David Necas (Yeti) <yeti@gwyddion.net>
+           2005 Petr Klapetek <klapetek@gwyddion.net>
+           2012 A.P.E. Research srl <infos@aperesearch.com>
+License: GPL-2+
+
+Files: modules/file/nanomagnetics.c
+Copyright: 2012 Sameer Grover <sameer.grover.1@gmail.com>
+           2012 David Necas (Yeti) <yeti@gwyddion.net>
+License: GPL-2+
+
+Files: modules/file/win_stm.c
+Copyright: 2014 Jeffrey J. Schwartz <schwartz@physics.ucla.edu>
+License: GPL-2+
+
+Files: modules/process/otsu_threshold.c
+Copyright: 2013 Brazilian Nanotechnology National Laboratory
+License: GPL-3+
+
+Files: modules/volume/volume_kmeans.c modules/volume/volume_kmedians.c
+Copyright: 2003 David Necas (Yeti) <yeti@gwyddion.net>
+           2003 Petr Klapetek <klapetek@gwyddion.net>
+           2003 Daniil Bratashov <dn2010@gmail.com>
+           2003 Evgeniy Ryabov <k1u2r3ka@mail.ru>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On a Debian system, the GNU GPL license version 2 is distributed in the file
+ ‘/usr/share/common-licenses/GPL-2’.
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On a Debian system, the GNU GPL license version 3 is distributed in the file
+ ‘/usr/share/common-licenses/GPL-3’.
+
+License: LGPL-2
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; version 2.1
+ of the License.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ 02110-1301, USA.
+ .
+ On a Debian system, the LGPL license version 2 is distributed in the file
+ ‘/usr/share/common-licenses/LGPL-2’.
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On a Debian system, the LGPL license version 2 is distributed in the file
+ ‘/usr/share/common-licenses/LGPL-2’.
+
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; version 2.1
+ of the License.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ 02110-1301, USA.
+ .
+ On a Debian system, the LGPL license version 2.1 is distributed in the file
+ ‘/usr/share/common-licenses/LGPL-2.1’.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; version 2.1
+ of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ 02110-1301, USA.
+ .
+ On a Debian system, the LGPL license version 2.1 is distributed in the file
+ ‘/usr/share/common-licenses/LGPL-2.1’.
+

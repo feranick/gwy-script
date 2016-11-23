@@ -1,0 +1,9 @@
+usr/bin/
+usr/lib/gwyddion/modules/
+usr/share/man/man1/
+usr/lib/gwyddion/perl/
+usr/lib/gwyddion/python/
+usr/lib/gwyddion/ruby/
+usr/share/man/man3/
+usr/share/applications/
+../gwyddion.xpm usr/share/pixmaps

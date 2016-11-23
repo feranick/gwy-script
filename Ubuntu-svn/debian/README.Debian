@@ -1,0 +1,22 @@
+Gwyddion for Debian
+===================
+
+1. Thumbnailer in Gwyddion 2.12
+
+The thumbnailer, which was introduced in Gwyddion 2.12 should work both in GNOME
+and Xfce. Gwyddion source ships a thumbnailer for KDE4, which is not enabled,
+as KDE4 is not yet in unstable.
+
+For the thumbnailer to work, you may have to restart your file manager
+(nautilus, thunar, ...).
+
+2. Gwyddion modules and plugins
+
+If you would like to extend gwyddion's functionality or use gwyddion's functions
+in your own program, you are encouraged to write modules (instead of plugins),
+as the plugin interface may be discontinued soon.
+For help on writing modules see 
+/usr/share/gtk-doc/html/libgwymodule/ModuleTutorial.html in the package
+libgwyddion20-doc.
+
+  -- Jan Beyer <jan@beathovn.de>  Mon, 09 Feb 2009 22:02:19 +0100

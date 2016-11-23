@@ -1,0 +1,6 @@
+etc/gconf/schemas/
+usr/share/locale/
+usr/share/icons/
+usr/share/gwyddion/
+usr/share/mime/packages/
+usr/share/thumbnailers/

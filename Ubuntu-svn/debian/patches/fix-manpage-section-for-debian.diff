@@ -1,0 +1,32 @@
+Description: correct Gwyddion::dump manpage section to .3pm
+ To avoid hiding any system call's or other more important command's manpages,
+ we patch the Makefile.in to get pod2man to produce the correct extension.
+ This fulfills the Debian policy on user generated Perl modules.
+ .
+ Upstream is not interested in adopting this patch (private mail conversation in
+ Oct 2007).
+Forwarded: not-needed
+Author: Jan Beyer <jan@beathovn.de>
+
+--- a/perl/Makefile.in
++++ b/perl/Makefile.in
+@@ -403,7 +403,7 @@
+ EXTRA_DIST = $(Gwyddion_PERL)
+ perllibdir = $(pkglibdir)/perl/Gwyddion
+ @HAVE_PERL_TRUE@man3dir = $(mandir)/man3
+-@HAVE_PERL_TRUE@POD2MAN_FLAGS = --center=$(PACKAGE)
++@HAVE_PERL_TRUE@POD2MAN_FLAGS = --center=$(PACKAGE) --section="3pm"
+ @HAVE_PERL_TRUE@perllib_DATA = $(Gwyddion_PERL)
+ @HAVE_PERL_TRUE@man3_pages = \
+ @HAVE_PERL_TRUE@	Gwyddion::dump.3pm
+--- a/perl/Makefile.am
++++ b/perl/Makefile.am
+@@ -9,7 +9,7 @@
+ 
+ if HAVE_PERL
+ man3dir = $(mandir)/man3
+-POD2MAN_FLAGS = --center=$(PACKAGE)
++POD2MAN_FLAGS = --center=$(PACKAGE) --section="3pm"
+ 
+ perllib_DATA = $(Gwyddion_PERL)
+ 
