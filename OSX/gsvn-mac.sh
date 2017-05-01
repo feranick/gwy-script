@@ -4,7 +4,7 @@
 # GVSN-mac
 # 
 # Bash script to make and submit gwyddion nightly packages to Ubuntu ppa.
-# v. 20120618b
+# v. 20160114
 #
 # Nicola Ferralis <feranick@hotmail.com>
 # 
@@ -42,11 +42,11 @@ cp gwyddion.c $1/app/gwyddion.c
 # Check what is the latest version of svn and stable
 #------------------------------------------------------------
 
-STR=$(curl http://gwyddion.net/download.php | sed -n '/gwyddion-head.tar.gz/p'| awk '{print $NF}')
+STR=$(curl http://gwyddion.net/download.php | sed -n '/gwyddion-head.tar.xz/p'| awk '{print $NF}')
 STR=`echo ${STR:76:10}`
 
-STR2=$(curl http://gwyddion.net/download.php | sed -n '/Stable version/p' | awk '{print $NF}')
-STR2=`echo ${STR2:1:4}`
+STR2=$(curl http://gwyddion.net/download.php | sed -n '/stable version Gwyddion/p' | awk '{print $NF}')
+STR2=`echo ${STR2:0:4}`
 
 #MPVER=$(sed -n '/version    /p' < $DIRGW/Portfile | awk '{print $NF}')
 clear
@@ -83,9 +83,9 @@ if [ "$TYPE" = "1" ]; then
  mkdir $TMP
  cd $TMP
  WDIR=`pwd`
- curl -O http://gwyddion.net/download/test/gwyddion-head.tar.gz
- tar xvzf gwyddion-head.tar.gz
- rm gwyddion-head.tar.gz
+ curl -O http://gwyddion.net/download/test/gwyddion-head.tar.xz
+ tar xvaf gwyddion-head.tar.xz
+ rm gwyddion-head.tar.xz
 
  #------------------------------------------------------------
  # Figure out latest svn version
@@ -175,9 +175,22 @@ if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
  echo "Saving dmg file."
  echo
  sudo port dmg gwyddion
- cp $DIRGW/work/*.dmg ../$DIR 
+ cp $DIRGW/work/*.dmg ../$DIR
  echo "A copy of the dmg installation package has been saved in the script's folder"
  fi
+
+ #------------------------------------------------------------
+ # Make a dmg package and copy it in the script's folder
+ #------------------------------------------------------------
+ if [ "$1" = "--pkg" ] || [ "$2" = "--pkg" ] ; then
+ echo
+ echo "Saving pkg file."
+ echo
+ sudo port pkg gwyddion
+ cp $DIRGW/work/*.pkg ../$DIR
+ echo "A copy of the pkg installation package has been saved in the script's folder"
+ fi
+
 
  #------------------------------------------------------------
  # Install new version from svn   
@@ -315,17 +328,31 @@ OLD="gwyddion-$OLD1"
  sudo patch -p0 -i diff
  cd $WDIR
 
- #------------------------------------------------------------
- # Make a dmg package and copy it in the script's folder   
- #------------------------------------------------------------
-# if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
-#   echo
-#   echo "Saving dmg file."
-#   echo
-#   sudo port dmg gwyddion
-#   cp $DIRGW/work/*.dmg ../$DIR 
-#   echo "A copy of the dmg installation package has been saved in the script's folder"
-#fi
+#------------------------------------------------------------
+# Make a dmg package and copy it in the script's folder
+#------------------------------------------------------------
+if [ "$1" = "--dmg" ] || [ "$2" = "--dmg" ] ; then
+echo
+echo "Saving dmg file."
+echo
+sudo port dmg gwyddion
+cp $DIRGW/work/*.dmg ../$DIR
+echo "A copy of the dmg installation package has been saved in the script's folder"
+fi
+
+
+#------------------------------------------------------------
+# Make a dmg package and copy it in the script's folder
+#------------------------------------------------------------
+if [ "$1" = "--pkg" ] || [ "$2" = "--pkg" ] ; then
+echo
+echo "Saving pkg file."
+echo
+sudo port pkg gwyddion
+cp $DIRGW/work/*.pkg ../$DIR
+echo "A copy of the pkg installation package has been saved in the script's folder"
+fi
+
 
  #------------------------------------------------------------
  # Install new version from svn   
