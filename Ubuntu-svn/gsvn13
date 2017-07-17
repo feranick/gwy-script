@@ -1,0 +1,108 @@
+#!/bin/bash
+#
+#
+# GVSN12
+# 
+# Bash script to make and submit gwyddion nightly packages to Ubuntu ppa.
+# v. 2017-07-16
+#
+# Nicola Ferralis <feranick@hotmail.com>
+# 
+
+# Variables definition
+BASE=2.47.20161122
+# The signing signature should be placed in this file
+PSWDFILE=signfile
+
+cd ~/Software/Ubuntu/gwyddion/svn5
+
+STR=$(curl http://gwyddion.net/download.php | sed -n '/gwyddion-head.tar.xz/p' | awk '{print $NF}')
+STR=`echo ${STR:76:10}`
+STR2=$(curl http://gwyddion.net/download.php | sed -n '/stable version Gwyddion/p' | awk '{print $NF}')
+STR2=`echo ${STR2:0:4}`
+clear
+echo
+echo "Latest development svn: $STR"
+echo "Latest stable: $STR2"
+echo
+
+# Uncomment this for interactive menu
+#echo "Continue? (1: YES - 2: NO)"
+#read TYPE
+
+# comment this for interactive menu.
+TYPE=1
+echo $TYPE
+
+if [ "$TYPE" = "1" ]; then
+
+CDIR=$(pwd)
+echo "exec /usr/bin/gpg --batch --no-tty --default-key CC964518 --no-use-agent --passphrase-file $PSWDFILE \"\$@\"" >> sign
+chmod +x sign
+
+curl -O http://gwyddion.net/download/test/gwyddion-head.tar.xz
+tar xvaf gwyddion-head.tar.xz
+rm gwyddion-head.tar.xz
+
+DIR=$(ls -lrt | sed -n '/gwyddion-2/p' | awk '{print $NF}')
+DIRB=$(ls -lrt | sed -n '/gwyddion-2/p' | sed 's/gwyddion-2/gwyddion_2/' | awk '{print $NF}')
+
+
+tar cvaf $DIR.orig.tar.xz $DIR/*
+mv $DIR.orig.tar.xz $DIRB.orig.tar.xz
+cp -r debian $DIR
+
+sed "s/${BASE}/${DIR:9}/" < $DIR/debian/changelog > tmpfile
+
+rm -rf $DIR/debian/changelog
+mv tmpfile $DIR/debian/changelog
+
+cd $DIR/
+debuild -S -sa -p$CDIR/sign
+dput gwyddion-svn ../gwyddion_${DIR:9}-0~ppa1~xenial1_source.changes
+cd ..
+
+#sed "s/0~ppa1~trusty1) trusty/0~ppa1~precise1) precise/" < $DIR/debian/changelog > tmpfile
+#rm -rf $DIR/debian/changelog
+#mv tmpfile $DIR/debian/changelog
+#cd $DIR/
+#debuild -S -sa -p$CDIR/sign
+#dput gwyddion-svn ../gwyddion_${DIR:9}-0~ppa1~precise1_source.changes
+#cd ..
+
+sed "s/0~ppa1~xenial1) xenial/0~ppa1~yakkety1) yakkety/" < $DIR/debian/changelog > tmpfile
+rm -rf $DIR/debian/changelog
+mv tmpfile $DIR/debian/changelog
+cd $DIR/
+debuild -S -sa -p$CDIR/sign
+dput gwyddion-svn ../gwyddion_${DIR:9}-0~ppa1~yakkety1_source.changes
+cd ..
+
+sed "s/0~ppa1~yakkety1) yakkety/0~ppa1~zesty1) zesty/" < $DIR/debian/changelog > tmpfile
+rm -rf $DIR/debian/changelog
+mv tmpfile $DIR/debian/changelog
+cd $DIR/
+debuild -S -sa -p$CDIR/sign
+dput gwyddion-svn ../gwyddion_${DIR:9}-0~ppa1~zesty1_source.changes
+cd ..
+
+sed "s/0~ppa1~zesty1) zesty/0~ppa1~trusty1) trusty/" < $DIR/debian/changelog > tmpfile
+rm -rf $DIR/debian/changelog
+mv tmpfile $DIR/debian/changelog
+cd $DIR/
+debuild -S -sa -p$CDIR/sign
+dput gwyddion-svn ../gwyddion_${DIR:9}-0~ppa1~trusty1_source.changes
+cd ..
+
+sed "s/0~ppa1~trusty1) trusty/0~ppa1~artful1) artful/" < $DIR/debian/changelog > tmpfile
+rm -rf $DIR/debian/changelog
+mv tmpfile $DIR/debian/changelog
+cd $DIR/
+debuild -S -sa -p$CDIR/sign
+dput gwyddion-svn ../gwyddion_${DIR:9}-0~ppa1~artful1_source.changes
+cd ..
+
+
+rm -r gwyddion*
+rm $CDIR/sign
+fi
